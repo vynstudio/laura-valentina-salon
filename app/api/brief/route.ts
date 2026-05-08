@@ -203,5 +203,42 @@ export async function POST(req: Request) {
     }
   }
 
+  await sendBriefEmail(text, data.email || "");
+
   return NextResponse.json({ ok: true });
+}
+
+async function sendBriefEmail(htmlBody: string, replyTo: string) {
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.BRIEF_EMAIL_TO || "hello@vyn.studio";
+  const from =
+    process.env.BRIEF_EMAIL_FROM ||
+    process.env.CONTACT_FROM_EMAIL ||
+    "Laura Valentina Brief <hola@vyn.studio>";
+
+  if (!apiKey) {
+    console.error("brief: missing RESEND_API_KEY, skipping email");
+    return;
+  }
+
+  const html = `<div style="font-family:ui-sans-serif,system-ui,sans-serif;color:#3D3128;max-width:640px;line-height:1.5">${htmlBody.replace(/\n/g, "<br>")}</div>`;
+
+  try {
+    await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from,
+        to,
+        subject: "📝 Brief Laura Valentina — nueva respuesta",
+        html,
+        ...(replyTo ? { reply_to: replyTo } : {}),
+      }),
+    });
+  } catch (err) {
+    console.error("brief: resend send failed", err);
+  }
 }
