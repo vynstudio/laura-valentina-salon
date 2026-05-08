@@ -4,6 +4,7 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://lauravalentina.ch";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+  // /brief is intentionally excluded — internal client form, robots noindex
   return [
     "",
     "/services",
