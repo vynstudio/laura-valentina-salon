@@ -55,7 +55,7 @@ function loadCalScript() {
         }
         p(cal, ar);
       };
-  })(window, "https://app.cal.com/embed/embed.js", "init");
+  })(window, "https://app.cal.eu/embed/embed.js", "init");
 }
 
 export default function CalFloatingButton() {
@@ -71,9 +71,9 @@ export default function CalFloatingButton() {
     loadCalScript();
     const Cal = window.Cal;
     if (!Cal) return;
-    const link = process.env.NEXT_PUBLIC_CAL_LINK || "lauravalentina";
+    const link = process.env.NEXT_PUBLIC_CAL_LINK || "valentinastudio";
     const ns = "lvfab";
-    Cal("init", ns, { origin: "https://cal.com" });
+    Cal("init", ns, { origin: "https://cal.eu" });
     const nsApi = Cal.ns?.[ns] as
       | ((...args: unknown[]) => unknown)
       | undefined;

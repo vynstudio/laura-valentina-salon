@@ -20,7 +20,10 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const API = "https://api.cal.com/v2";
+// Cal.com runs separate instances per region; this client lives on the EU
+// instance (cal.eu) so use the EU API origin. Override with CAL_API_BASE
+// in .env.local if needed.
+const API = process.env.CAL_API_BASE || "https://api.cal.eu/v2";
 const API_VERSION = "2024-06-14"; // pinned for /event-types schema
 
 // Slugs MUST match the keys deep-linked from app/booking/page.tsx

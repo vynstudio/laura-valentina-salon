@@ -54,7 +54,7 @@ function loadCalScript() {
         }
         p(cal, ar);
       };
-  })(window, "https://app.cal.com/embed/embed.js", "init");
+  })(window, "https://app.cal.eu/embed/embed.js", "init");
 }
 
 export default function CalEmbed({ calLink, height = 720 }: Props) {
@@ -64,13 +64,13 @@ export default function CalEmbed({ calLink, height = 720 }: Props) {
   const link =
     calLink ||
     process.env.NEXT_PUBLIC_CAL_LINK ||
-    "lauravalentina";
+    "valentinastudio";
 
   useEffect(() => {
     loadCalScript();
     const Cal = window.Cal;
     if (!Cal) return;
-    Cal("init", "lvbook", { origin: "https://cal.com" });
+    Cal("init", "lvbook", { origin: "https://cal.eu" });
     // @ts-expect-error namespaced API
     Cal.ns?.lvbook?.("inline", {
       elementOrSelector: ref.current,

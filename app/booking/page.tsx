@@ -11,7 +11,7 @@ export default function BookingPage() {
   const [selected, setSelected] = useState<string>("");
 
   const handle =
-    process.env.NEXT_PUBLIC_CAL_LINK || "lauravalentina";
+    process.env.NEXT_PUBLIC_CAL_LINK || "valentinastudio";
 
   // Cal.com event-type linking convention: <handle>/<event-slug>
   // If no service selected we just show the user's page (lists all event types).
