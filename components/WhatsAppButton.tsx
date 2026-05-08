@@ -12,7 +12,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener"
       aria-label="WhatsApp"
-      className="fixed bottom-24 right-5 z-30 hidden lg:bottom-6 lg:right-8 lg:inline-flex h-12 w-12 items-center justify-center rounded-full bg-pink-500 text-white shadow-[0_10px_30px_-10px_rgba(232,154,184,0.7)] transition-transform hover:-translate-y-0.5"
+      className="fixed bottom-24 left-5 z-30 hidden lg:bottom-6 lg:left-8 lg:inline-flex h-12 w-12 items-center justify-center rounded-full bg-pink-500 text-white shadow-[0_10px_30px_-10px_rgba(232,154,184,0.7)] transition-transform hover:-translate-y-0.5"
     >
       <span className="sr-only">{t.cta.whatsapp}</span>
       <svg viewBox="0 0 32 32" className="h-6 w-6" aria-hidden>

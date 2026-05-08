@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import CalFloatingButton from "@/components/CalFloatingButton";
 import { LocaleProvider } from "@/lib/LocaleProvider";
 import { beautySchema, websiteSchema } from "@/lib/schema";
 
@@ -105,6 +106,7 @@ export default function RootLayout({
           <Footer />
           <StickyMobileCTA />
           <WhatsAppButton />
+          <CalFloatingButton />
         </LocaleProvider>
       </body>
     </html>
