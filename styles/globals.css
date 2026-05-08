@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FAF8F5;
+  --fg: #3D3128;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-brown-900;
+    font-feature-settings: "ss01", "liga";
+  }
+  p {
+    @apply font-sans text-brown-700;
+  }
+  ::selection {
+    background: #F5C4D8;
+    color: #3D3128;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-brown-700 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.18em] text-cream transition duration-300 ease-smooth hover:bg-brown-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500/60;
+  }
+  .btn-pink {
+    @apply inline-flex items-center justify-center rounded-full bg-pink-500 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.18em] text-white transition duration-300 ease-smooth hover:bg-pink-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500/60;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-brown-200 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.18em] text-brown-700 transition duration-300 ease-smooth hover:border-brown-700 hover:text-brown-900;
+  }
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-[0.32em] text-brown-500;
+  }
+  .h-display {
+    @apply font-serif text-4xl leading-[1.05] text-brown-900 sm:text-5xl lg:text-6xl;
+  }
+  .surface {
+    @apply rounded-[28px] border border-brown-100/70 bg-white/70 backdrop-blur-sm;
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.7s ease-smooth both;
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
