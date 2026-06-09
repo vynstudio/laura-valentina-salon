@@ -1,4 +1,4 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://lauravalentina.ch";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://valentinastudio.ch";
 
 export const beautySchema = {
   "@context": "https://schema.org",
@@ -7,7 +7,7 @@ export const beautySchema = {
   description:
     "Premium microblading and nail services in Biel/Bienne. Studio appointments and at-home service available.",
   url: SITE_URL,
-  image: `${SITE_URL}/og-image.jpg`,
+  image: `${SITE_URL}/opengraph-image`,
   priceRange: "CHF",
   telephone: "+41-00-000-00-00",
   address: {

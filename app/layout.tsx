@@ -22,7 +22,7 @@ const inter = Inter({
 });
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://lauravalentina.ch";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://valentinastudio.ch";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -57,14 +57,7 @@ export const metadata: Metadata = {
     siteName: "Laura Valentina",
     locale: "fr_CH",
     type: "website",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Laura Valentina — Microblading & Nail Salon",
-      },
-    ],
+    // OG image is generated at build time by app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
